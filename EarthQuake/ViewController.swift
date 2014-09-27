@@ -7,12 +7,16 @@
 //
 
 import UIKit
+import Alamofire
 
 class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        Alamofire.request(.GET, "http://http://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/significant_hour.geojson")
+                 .responseJSON {(request, response, JSON, error) in
+                     println(JSON)
+                 }
     }
 
     override func didReceiveMemoryWarning() {

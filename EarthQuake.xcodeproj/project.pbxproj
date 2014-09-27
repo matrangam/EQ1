@@ -13,6 +13,8 @@
 		D60DDE4119D737880000970E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D60DDE4019D737880000970E /* Images.xcassets */; };
 		D60DDE4419D737880000970E /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = D60DDE4219D737880000970E /* LaunchScreen.xib */; };
 		D60DDE5019D737880000970E /* EarthQuakeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D60DDE4F19D737880000970E /* EarthQuakeTests.swift */; };
+		D68EFAC119D742CB0028A974 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D68EFABC19D742A60028A974 /* Alamofire.framework */; };
+		D68EFAC219D742CB0028A974 /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D68EFABC19D742A60028A974 /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -23,7 +25,49 @@
 			remoteGlobalIDString = D60DDE3319D737880000970E;
 			remoteInfo = EarthQuake;
 		};
+		D68EFABB19D742A60028A974 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D68EFAB619D742A50028A974 /* Alamofire.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = F8111E3319A95C8B0040E7D1;
+			remoteInfo = Alamofire;
+		};
+		D68EFABD19D742A60028A974 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D68EFAB619D742A50028A974 /* Alamofire.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = F8111E3E19A95C8B0040E7D1;
+			remoteInfo = AlamofireTests;
+		};
+		D68EFABF19D742B70028A974 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D68EFAB619D742A50028A974 /* Alamofire.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = F8111E3219A95C8B0040E7D1;
+			remoteInfo = Alamofire;
+		};
+		D68EFAC319D742CB0028A974 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D68EFAB619D742A50028A974 /* Alamofire.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = F8111E3219A95C8B0040E7D1;
+			remoteInfo = Alamofire;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		D68EFAC519D742CB0028A974 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				D68EFAC219D742CB0028A974 /* Alamofire.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		D60DDE3419D737880000970E /* EarthQuake.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EarthQuake.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -36,6 +80,7 @@
 		D60DDE4919D737880000970E /* EarthQuakeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EarthQuakeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D60DDE4E19D737880000970E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D60DDE4F19D737880000970E /* EarthQuakeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EarthQuakeTests.swift; sourceTree = "<group>"; };
+		D68EFAB619D742A50028A974 /* Alamofire.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Alamofire.xcodeproj; path = Alamofire/Alamofire.xcodeproj; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +88,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D68EFAC119D742CB0028A974 /* Alamofire.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -59,6 +105,7 @@
 		D60DDE2B19D737880000970E = {
 			isa = PBXGroup;
 			children = (
+				D68EFAB619D742A50028A974 /* Alamofire.xcodeproj */,
 				D60DDE3619D737880000970E /* EarthQuake */,
 				D60DDE4C19D737880000970E /* EarthQuakeTests */,
 				D60DDE3519D737880000970E /* Products */,
@@ -112,6 +159,15 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		D68EFAB719D742A50028A974 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D68EFABC19D742A60028A974 /* Alamofire.framework */,
+				D68EFABE19D742A60028A974 /* AlamofireTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -122,10 +178,13 @@
 				D60DDE3019D737880000970E /* Sources */,
 				D60DDE3119D737880000970E /* Frameworks */,
 				D60DDE3219D737880000970E /* Resources */,
+				D68EFAC519D742CB0028A974 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				D68EFAC019D742B70028A974 /* PBXTargetDependency */,
+				D68EFAC419D742CB0028A974 /* PBXTargetDependency */,
 			);
 			name = EarthQuake;
 			productName = EarthQuake;
@@ -179,6 +238,12 @@
 			mainGroup = D60DDE2B19D737880000970E;
 			productRefGroup = D60DDE3519D737880000970E /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = D68EFAB719D742A50028A974 /* Products */;
+					ProjectRef = D68EFAB619D742A50028A974 /* Alamofire.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				D60DDE3319D737880000970E /* EarthQuake */,
@@ -186,6 +251,23 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		D68EFABC19D742A60028A974 /* Alamofire.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Alamofire.framework;
+			remoteRef = D68EFABB19D742A60028A974 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		D68EFABE19D742A60028A974 /* AlamofireTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = AlamofireTests.xctest;
+			remoteRef = D68EFABD19D742A60028A974 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		D60DDE3219D737880000970E /* Resources */ = {
@@ -232,6 +314,16 @@
 			isa = PBXTargetDependency;
 			target = D60DDE3319D737880000970E /* EarthQuake */;
 			targetProxy = D60DDE4A19D737880000970E /* PBXContainerItemProxy */;
+		};
+		D68EFAC019D742B70028A974 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Alamofire;
+			targetProxy = D68EFABF19D742B70028A974 /* PBXContainerItemProxy */;
+		};
+		D68EFAC419D742CB0028A974 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Alamofire;
+			targetProxy = D68EFAC319D742CB0028A974 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -407,6 +499,7 @@
 				D60DDE5519D737880000970E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D60DDE5619D737880000970E /* Build configuration list for PBXNativeTarget "EarthQuakeTests" */ = {
 			isa = XCConfigurationList;
@@ -415,6 +508,7 @@
 				D60DDE5819D737880000970E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
