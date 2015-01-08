@@ -9,10 +9,6 @@ class ViewController: UIViewController {
         _getEarthquakeData()
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
-    
     func _getEarthquakeData() {
         Alamofire
             .request(.GET, "http://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_hour.geojson")
@@ -24,7 +20,6 @@ class ViewController: UIViewController {
                         println(earthquake.mag)
                         println("/n")
                     }
-                    
                 }
         }
     }
