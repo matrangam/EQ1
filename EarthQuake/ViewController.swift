@@ -1,10 +1,32 @@
 import UIKit
 import Alamofire
+import MapKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, MKMapViewDelegate {
 
-    @IBOutlet var _earthquakeButton: UIButton!
+    @IBOutlet weak var _earthquakeButton: UIButton!
+    @IBOutlet weak var _mapView: MKMapView!
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        var location = CLLocationCoordinate2D(
+            latitude: 16.40,
+            longitude: -86.34
+        )
+        
+        var span = MKCoordinateSpanMake(0.5, 0.5)
+        var region = MKCoordinateRegion(center: location, span: span)
+        
+        _mapView.setRegion(region, animated: true)
+        
+        var annotation = MKPointAnnotation()
+        annotation.setCoordinate(location)
+        annotation.title = "Roatan"
+        annotation.subtitle = "Honduras"
+        
+        _mapView.addAnnotation(annotation)
+    }
     @IBAction func _earthquakeButtonPressed(sender: AnyObject) {
         _getEarthquakeData()
     }

@@ -1,6 +1,6 @@
 import Foundation
 
-class Earthquake {
+class Earthquake: NSObject {
     let json: JSON
     let detail: Any
     let latitude: Any

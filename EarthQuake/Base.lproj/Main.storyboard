@@ -17,9 +17,9 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ddk-pr-NN4">
-                                <rect key="frame" x="162" y="285" width="276" height="30"/>
+                                <rect key="frame" x="162" y="44" width="276" height="30"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="276" id="bJc-pp-z3J"/>
+                                    <constraint firstAttribute="width" constant="276" id="gfP-HJ-mVG"/>
                                 </constraints>
                                 <state key="normal" title="Get Earthquakes">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -28,15 +28,24 @@
                                     <action selector="_earthquakeButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Nc6-xF-IPD"/>
                                 </connections>
                             </button>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="aR9-lK-L0J">
+                                <rect key="frame" x="0.0" y="82" width="600" height="518"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="OPo-xg-3Kl"/>
+                                </connections>
+                            </mapView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="Ddk-pr-NN4" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="SbD-Bl-azF"/>
-                            <constraint firstItem="Ddk-pr-NN4" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="oL8-Ct-B1h"/>
+                            <constraint firstItem="Ddk-pr-NN4" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="1yY-lN-Qmr"/>
+                            <constraint firstItem="aR9-lK-L0J" firstAttribute="top" secondItem="Ddk-pr-NN4" secondAttribute="bottom" constant="8" id="8fZ-ED-V7U"/>
+                            <constraint firstItem="Ddk-pr-NN4" firstAttribute="centerX" secondItem="aR9-lK-L0J" secondAttribute="centerX" id="BAC-ls-LlA"/>
+                            <constraint firstItem="Ddk-pr-NN4" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="24" id="a8x-oc-EDc"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="_earthquakeButton" destination="Ddk-pr-NN4" id="Quq-Rw-2t3"/>
+                        <outlet property="_mapView" destination="aR9-lK-L0J" id="c6r-9l-ceg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
