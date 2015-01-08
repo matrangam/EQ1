@@ -1,20 +1,30 @@
 import Foundation
+import MapKit
 
-class Earthquake: NSObject {
-    let json: JSON
-    let detail: Any
-    let latitude: Any
-    let longitude: Any
-    let time: Any
-    let mag: Any
+class Earthquake {
+    private let json: JSON
+    private let detail: String
+    private let latitude: Double
+    private let longitude: Double
+    private let time: Double
+    let mag: String
+    let place: String
 
     init(json: JSON) {
         self.json = json
-        self.detail = json["properties"]["detail"]
-        self.latitude = json["geometry"]["points"][1]
-        self.longitude = json["geometry"]["points"][0]
-        self.time = json["properties"]["time"]
-        self.mag = json["properties"]["mag"]
+        self.detail = json["properties"]["detail"].stringValue!
+        self.latitude = json["geometry"]["coordinates"][1].doubleValue!
+        self.longitude = json["geometry"]["coordinates"][0].doubleValue!
+
+        self.time = json["properties"]["time"].doubleValue!
+        self.mag = json["properties"]["mag"].stringValue!
+        self.place = json["properties"]["place"].stringValue!
+    }
+    
+    func location() -> CLLocationCoordinate2D {
+        let lat = self.latitude as CLLocationDegrees
+        let lon = self.longitude as CLLocationDegrees
+        return CLLocationCoordinate2DMake(lat, lon)
     }
 }
 

@@ -2,48 +2,66 @@ import UIKit
 import Alamofire
 import MapKit
 
-class ViewController: UIViewController, MKMapViewDelegate {
+class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
 
-    @IBOutlet weak var _earthquakeButton: UIButton!
-    @IBOutlet weak var _mapView: MKMapView!
+    @IBOutlet private weak var _earthquakeButton: UIButton!
+    @IBOutlet private weak var _mapView: MKMapView!
+
+    private var _locationManager: CLLocationManager!
+    private var _currentLocationCoordinate: CLLocationCoordinate2D!
+    private var _currentQuakes: Array<Earthquake>!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        var location = CLLocationCoordinate2D(
-            latitude: 16.40,
-            longitude: -86.34
-        )
-        
-        var span = MKCoordinateSpanMake(0.5, 0.5)
-        var region = MKCoordinateRegion(center: location, span: span)
-        
-        _mapView.setRegion(region, animated: true)
-        
-        var annotation = MKPointAnnotation()
-        annotation.setCoordinate(location)
-        annotation.title = "Roatan"
-        annotation.subtitle = "Honduras"
-        
-        _mapView.addAnnotation(annotation)
+        self._currentQuakes = []
+        if (CLLocationManager.locationServicesEnabled()) {
+            _locationManager = CLLocationManager()
+            _locationManager.delegate = self
+            _locationManager.desiredAccuracy = kCLLocationAccuracyBest
+            _locationManager.requestAlwaysAuthorization()
+            _locationManager.startUpdatingLocation()
+        }
     }
-    @IBAction func _earthquakeButtonPressed(sender: AnyObject) {
+
+    func locationManager(manager: CLLocationManager!, didUpdateLocations locations: [AnyObject]!) {
+        let location = locations.last as CLLocation
+        
+        let center = CLLocationCoordinate2D(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
+        let region = MKCoordinateRegion(center: center, span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01))
+        
+        if _currentLocationCoordinate == nil {
+            _currentLocationCoordinate = CLLocationCoordinate2DMake(0, 0)
+        }
+        if location.coordinate.latitude != _currentLocationCoordinate.latitude {
+            _currentLocationCoordinate = location.coordinate
+            _mapView.setRegion(region, animated: true)
+        }
+    }
+    
+    @IBAction private func _earthquakeButtonPressed(sender: AnyObject) {
         _getEarthquakeData()
     }
     
-    func _getEarthquakeData() {
+    private func _getEarthquakeData() {
         Alamofire
             .request(.GET, "http://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_hour.geojson")
             .responseJSON {(request, response, result, error) in
                 let json = JSON(object: result!)
                 if let features = json["features"].arrayValue {
                     for feature in features {
-                        let earthquake = Earthquake(json: feature)
-                        println(earthquake.mag)
-                        println("/n")
+                        self._currentQuakes.append(Earthquake(json: feature))
+                    }
+
+                    for quake in self._currentQuakes {
+                        let annotation = MKPointAnnotation()
+                        annotation.setCoordinate(quake.location())
+                        annotation.title = quake.place
+                        annotation.subtitle = quake.mag
+                        self._mapView.addAnnotation(annotation)
+                        println(quake.place, quake.mag)
                     }
                 }
         }
     }
 }
-
