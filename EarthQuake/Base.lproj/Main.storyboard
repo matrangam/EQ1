@@ -28,8 +28,12 @@
                                     <action selector="_earthquakeButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Nc6-xF-IPD"/>
                                 </connections>
                             </button>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="aR9-lK-L0J">
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="aR9-lK-L0J">
                                 <rect key="frame" x="0.0" y="82" width="600" height="518"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="518" id="a11-Lu-AKM"/>
+                                    <constraint firstAttribute="width" constant="600" id="cum-RV-mOg"/>
+                                </constraints>
                                 <connections>
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="OPo-xg-3Kl"/>
                                 </connections>
