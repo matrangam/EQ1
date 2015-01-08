@@ -13,6 +13,8 @@
 		D60DDE4119D737880000970E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D60DDE4019D737880000970E /* Images.xcassets */; };
 		D60DDE4419D737880000970E /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = D60DDE4219D737880000970E /* LaunchScreen.xib */; };
 		D60DDE5019D737880000970E /* EarthQuakeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D60DDE4F19D737880000970E /* EarthQuakeTests.swift */; };
+		D68277771A5DE3C7007DEDA2 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = D68277761A5DE3C7007DEDA2 /* SwiftyJSON.swift */; };
+		D682777A1A5DEA36007DEDA2 /* Earthquake.swift in Sources */ = {isa = PBXBuildFile; fileRef = D68277791A5DEA36007DEDA2 /* Earthquake.swift */; };
 		D68EFAC119D742CB0028A974 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D68EFABC19D742A60028A974 /* Alamofire.framework */; };
 		D68EFAC219D742CB0028A974 /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D68EFABC19D742A60028A974 /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
@@ -80,6 +82,8 @@
 		D60DDE4919D737880000970E /* EarthQuakeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EarthQuakeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D60DDE4E19D737880000970E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D60DDE4F19D737880000970E /* EarthQuakeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EarthQuakeTests.swift; sourceTree = "<group>"; };
+		D68277761A5DE3C7007DEDA2 /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
+		D68277791A5DEA36007DEDA2 /* Earthquake.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Earthquake.swift; sourceTree = "<group>"; };
 		D68EFAB619D742A50028A974 /* Alamofire.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Alamofire.xcodeproj; path = Alamofire/Alamofire.xcodeproj; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -124,12 +128,14 @@
 		D60DDE3619D737880000970E /* EarthQuake */ = {
 			isa = PBXGroup;
 			children = (
+				D682777B1A5DEA52007DEDA2 /* Frameworks */,
 				D60DDE3919D737880000970E /* AppDelegate.swift */,
 				D60DDE3B19D737880000970E /* ViewController.swift */,
 				D60DDE3D19D737880000970E /* Main.storyboard */,
 				D60DDE4019D737880000970E /* Images.xcassets */,
 				D60DDE4219D737880000970E /* LaunchScreen.xib */,
 				D60DDE3719D737880000970E /* Supporting Files */,
+				D682777C1A5DEA68007DEDA2 /* Models */,
 			);
 			path = EarthQuake;
 			sourceTree = "<group>";
@@ -157,6 +163,22 @@
 				D60DDE4E19D737880000970E /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		D682777B1A5DEA52007DEDA2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D68277761A5DE3C7007DEDA2 /* SwiftyJSON.swift */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D682777C1A5DEA68007DEDA2 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				D68277791A5DEA36007DEDA2 /* Earthquake.swift */,
+			);
+			name = Models;
 			sourceTree = "<group>";
 		};
 		D68EFAB719D742A50028A974 /* Products */ = {
@@ -294,7 +316,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D68277771A5DE3C7007DEDA2 /* SwiftyJSON.swift in Sources */,
 				D60DDE3C19D737880000970E /* ViewController.swift in Sources */,
+				D682777A1A5DEA36007DEDA2 /* Earthquake.swift in Sources */,
 				D60DDE3A19D737880000970E /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

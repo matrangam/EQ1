@@ -16,10 +16,17 @@ class ViewController: UIViewController {
     func _getEarthquakeData() {
         Alamofire
             .request(.GET, "http://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_hour.geojson")
-            .responseJSON {(request, response, JSON, error) in
-                println(request)
-                println(response)
-                println(JSON)
+            .responseJSON {(request, response, result, error) in
+                let json = JSON(object: result!)
+                if let features = json["features"].arrayValue {
+                    for feature in features {
+                        let earthquake = Earthquake(json: feature)
+                        println(earthquake.mag)
+                        println("/n")
+                    }
+                    
+                }
         }
     }
 }
+
