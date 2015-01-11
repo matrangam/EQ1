@@ -6,7 +6,7 @@ class Earthquake {
     private let detail: String
     private let latitude: Double
     private let longitude: Double
-    private let time: Double
+    private let timeInSeconds: Double
     let mag: String
     let place: String
 
@@ -15,10 +15,17 @@ class Earthquake {
         self.detail = json["properties"]["detail"].stringValue!
         self.latitude = json["geometry"]["coordinates"][1].doubleValue!
         self.longitude = json["geometry"]["coordinates"][0].doubleValue!
-
-        self.time = json["properties"]["time"].doubleValue!
         self.mag = json["properties"]["mag"].stringValue!
         self.place = json["properties"]["place"].stringValue!
+        self.timeInSeconds = json["properties"]["time"].doubleValue! / 1000
+    }
+    
+    func formattedDate() -> String! {
+        let formatter = NSDateFormatter()
+        formatter.timeZone = NSTimeZone(name: "UTC")
+        formatter.dateFormat = "yyyy-MM-dd 'at' HH:mm 'UTC'"
+        let quakeTime = NSDate(timeIntervalSince1970: (self.timeInSeconds))
+        return formatter.stringFromDate(quakeTime)
     }
     
     func location() -> CLLocationCoordinate2D {
