@@ -44,27 +44,21 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
     }
     
     private func _getEarthquakeData() {
-        Alamofire
-            .request(.GET, "http://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_day.geojson")
-            .responseJSON {(request, response, result, error) in
-                let json = JSON(object: result!)
-                if let features = json["features"].arrayValue {
-                    for feature in features {
-                        self._currentQuakes.append(Earthquake(json: feature))
-                    }
-                    
-                    var quakeAnnotations = Array<MKPointAnnotation>()
-                    for quake in self._currentQuakes {
-                        let annotation = MKPointAnnotation()
-                        annotation.setCoordinate(quake.location())
-                        annotation.title = quake.place
-                        annotation.subtitle = quake.mag
-                        self._mapView.addAnnotation(annotation)
-                        quakeAnnotations.append(annotation)
-                        println(quake.place, quake.mag)
-                    }
-                    self._mapView.showAnnotations(quakeAnnotations, animated: true)
-                }
-        }
+        AppDelegate().earthquakeDataProvider().getEarthquakeData(self._buildAnnotations, self._buildAnnotations)
     }
+    
+    private func _buildAnnotations(quakes: Array<Earthquake>!) {
+        var quakeAnnotations = Array<MKPointAnnotation>()
+        for quake in quakes {
+            let annotation = MKPointAnnotation()
+            annotation.setCoordinate(quake.location())
+            annotation.title = quake.place
+            annotation.subtitle = quake.mag
+            self._mapView.addAnnotation(annotation)
+            quakeAnnotations.append(annotation)
+            println(quake.place, quake.mag)
+        }
+        self._mapView.showAnnotations(quakeAnnotations, animated: true)
+    }
+    
 }
