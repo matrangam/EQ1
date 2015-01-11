@@ -52,15 +52,18 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
                     for feature in features {
                         self._currentQuakes.append(Earthquake(json: feature))
                     }
-
+                    
+                    var quakeAnnotations = Array<MKPointAnnotation>()
                     for quake in self._currentQuakes {
                         let annotation = MKPointAnnotation()
                         annotation.setCoordinate(quake.location())
                         annotation.title = quake.place
                         annotation.subtitle = quake.mag
                         self._mapView.addAnnotation(annotation)
+                        quakeAnnotations.append(annotation)
                         println(quake.place, quake.mag)
                     }
+                    self._mapView.showAnnotations(quakeAnnotations, animated: true)
                 }
         }
     }
