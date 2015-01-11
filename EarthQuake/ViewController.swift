@@ -44,21 +44,23 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
     }
     
     private func _getEarthquakeData() {
-        AppDelegate().earthquakeDataProvider().getEarthquakeData(self._buildAnnotations, self._buildAnnotations)
+        AppDelegate().earthquakeDataProvider().getEarthquakeData(_buildAnnotations, _handleNetworkError)
     }
     
-    private func _buildAnnotations(quakes: Array<Earthquake>!) {
+    private func _buildAnnotations(earthQuakes: Array<Earthquake>!) {
         var quakeAnnotations = Array<MKPointAnnotation>()
-        for quake in quakes {
+        for quake in earthQuakes {
             let annotation = MKPointAnnotation()
             annotation.setCoordinate(quake.location())
             annotation.title = quake.place
             annotation.subtitle = quake.mag
-            self._mapView.addAnnotation(annotation)
             quakeAnnotations.append(annotation)
-            println(quake.place, quake.mag)
+            _mapView.addAnnotation(annotation)
         }
-        self._mapView.showAnnotations(quakeAnnotations, animated: true)
+        _mapView.showAnnotations(quakeAnnotations, animated: true)
     }
     
+    private func _handleNetworkError(error: NSError!) {
+        println(error)
+    }
 }
