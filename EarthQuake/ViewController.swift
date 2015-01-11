@@ -1,5 +1,4 @@
 import UIKit
-import Alamofire
 import MapKit
 
 class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
