@@ -21,4 +21,7 @@ class EarthquakeDataProvider : NSObject {
                 }
         }
     }
+    
+//    http://comcat.cr.usgs.gov/fdsnws/event/1/query?minmag=8.5&starttime=1900-01-01&endtime=2015-01-01&format=geojson
+//    Sample of a search url that returns JSON.
 }
