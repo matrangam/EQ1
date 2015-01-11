@@ -8,17 +8,14 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
     @IBOutlet private weak var _mapView: MKMapView!
 
     private var _locationManager: CLLocationManager!
-    private var _currentLocationCoordinate: CLLocationCoordinate2D!
-    private var _currentQuakes: Array<Earthquake>!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self._currentQuakes = []
         if (CLLocationManager.locationServicesEnabled()) {
             _locationManager = CLLocationManager()
             _locationManager.delegate = self
-            _locationManager.desiredAccuracy = kCLLocationAccuracyBest
+            _locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
             _locationManager.requestAlwaysAuthorization()
             _locationManager.startUpdatingLocation()
         }
@@ -26,17 +23,11 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
 
     func locationManager(manager: CLLocationManager!, didUpdateLocations locations: [AnyObject]!) {
         let location = locations.last as CLLocation
-        
         let center = CLLocationCoordinate2D(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
         let region = MKCoordinateRegion(center: center, span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01))
         
-        if _currentLocationCoordinate == nil {
-            _currentLocationCoordinate = CLLocationCoordinate2DMake(0, 0)
-        }
-        if location.coordinate.latitude != _currentLocationCoordinate.latitude {
-            _currentLocationCoordinate = location.coordinate
-            _mapView.setRegion(region, animated: true)
-        }
+        _mapView.setRegion(region, animated: true)
+        _locationManager.stopUpdatingLocation()
     }
     
     @IBAction private func _earthquakeButtonPressed(sender: AnyObject) {
