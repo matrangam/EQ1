@@ -40,10 +40,6 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
     }
     
     @IBAction private func _earthquakeButtonPressed(sender: AnyObject) {
-        _getEarthquakeData()
-    }
-    
-    private func _getEarthquakeData() {
         AppDelegate().earthquakeDataProvider().getEarthquakeData(_buildAnnotations, _handleNetworkError)
     }
     
