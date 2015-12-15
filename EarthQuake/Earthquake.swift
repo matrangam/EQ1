@@ -12,12 +12,12 @@ class Earthquake {
 
     init(json: JSON) {
         self.json = json
-        self.detail = json["properties"]["detail"].stringValue!
-        self.latitude = json["geometry"]["coordinates"][1].doubleValue!
-        self.longitude = json["geometry"]["coordinates"][0].doubleValue!
-        self.mag = json["properties"]["mag"].stringValue!
-        self.place = json["properties"]["place"].stringValue!
-        self.timeInSeconds = json["properties"]["time"].doubleValue! / 1000
+        self.detail = json["properties"]["detail"].stringValue
+        self.latitude = json["geometry"]["coordinates"][1].doubleValue
+        self.longitude = json["geometry"]["coordinates"][0].doubleValue
+        self.mag = json["properties"]["mag"].stringValue
+        self.place = json["properties"]["place"].stringValue
+        self.timeInSeconds = json["properties"]["time"].doubleValue / 1000
     }
     
     func formattedDate() -> String! {
