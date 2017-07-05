@@ -37,7 +37,6 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
         var quakeAnnotations = Array<MKPointAnnotation>()
         for quake in earthQuakes {
             let annotation = MKPointAnnotation()
-            var subtitle = "Mag: \(quake.mag) Time: \(quake.formattedDate())"
             annotation.coordinate = quake.location()
             annotation.title = quake.place
             annotation.subtitle = subtitle
