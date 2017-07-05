@@ -40,7 +40,7 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
                 let annotation = MKPointAnnotation()
                 annotation.coordinate = quake.location()
                 annotation.title = quake.place
-                annotation.subtitle = quake.mag
+                annotation.subtitle = "Magnitude: \(quake.mag!)"
                 quakeAnnotations.append(annotation)
                 self._mapView.addAnnotation(annotation)
             }
