@@ -2,30 +2,20 @@ import Foundation
 import MapKit
 
 class Earthquake {
-    private let json: JSON
-    private let detail: String
-    private let latitude: Double
-    private let longitude: Double
-    private let timeInSeconds: Double
-    let mag: String
-    let place: String
+    fileprivate var detail: String! = nil
+    fileprivate var latitude: Double! = nil
+    fileprivate var longitude: Double! = nil
+    fileprivate var timeInSeconds: Double! = nil
+    var mag: String! = nil
+    var place: String! = nil
 
-    init(json: JSON) {
-        self.json = json
-        self.detail = json["properties"]["detail"].stringValue
-        self.latitude = json["geometry"]["coordinates"][1].doubleValue
-        self.longitude = json["geometry"]["coordinates"][0].doubleValue
-        self.mag = json["properties"]["mag"].stringValue
-        self.place = json["properties"]["place"].stringValue
-        self.timeInSeconds = json["properties"]["time"].doubleValue / 1000
-    }
     
     func formattedDate() -> String! {
-        let formatter = NSDateFormatter()
-        formatter.timeZone = NSTimeZone(name: "UTC")
+        let formatter = DateFormatter()
+        formatter.timeZone = TimeZone(identifier: "UTC")
         formatter.dateFormat = "yyyy-MM-dd 'at' HH:mm 'UTC'"
-        let quakeTime = NSDate(timeIntervalSince1970: (self.timeInSeconds))
-        return formatter.stringFromDate(quakeTime)
+        let quakeTime = Date(timeIntervalSince1970: (self.timeInSeconds))
+        return formatter.string(from: quakeTime)
     }
     
     func location() -> CLLocationCoordinate2D {
@@ -33,7 +23,40 @@ class Earthquake {
         let lon = self.longitude as CLLocationDegrees
         return CLLocationCoordinate2DMake(lat, lon)
     }
+
+    static func fromDict(feature: [String: AnyObject]) -> Earthquake? {
+
+
+        guard let props = feature["properties"] as? [String: AnyObject] else {
+            return nil
+        }
+
+        guard let geo = feature["geometry"] as? [String: AnyObject] else {
+            return nil
+        }
+
+        guard let coordinates = geo["coordinates"] as? NSArray , coordinates.count != 0 else {
+            return nil
+        }
+
+        guard let mag = props["mag"] as? Float else {
+            return nil
+        }
+
+
+        let quake = Earthquake()
+        quake.detail = props["detail"] as? String ?? ""
+        quake.longitude = coordinates[0] as! Double
+        quake.latitude = coordinates[1] as! Double
+        quake.mag = String(mag)
+        quake.place = props["place"] as? String ?? ""
+        quake.timeInSeconds = props["time"] as! Double / 1000
+
+        return quake
+    }
 }
+
+
 
 // Basic:
 //[id: usc000tcxe,

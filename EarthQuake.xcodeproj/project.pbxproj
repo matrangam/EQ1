@@ -14,10 +14,7 @@
 		D60DDE4419D737880000970E /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = D60DDE4219D737880000970E /* LaunchScreen.xib */; };
 		D60DDE5019D737880000970E /* EarthQuakeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D60DDE4F19D737880000970E /* EarthQuakeTests.swift */; };
 		D6389E811A5EF61900EFBA3A /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6389E801A5EF61900EFBA3A /* MapKit.framework */; };
-		D68277771A5DE3C7007DEDA2 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = D68277761A5DE3C7007DEDA2 /* SwiftyJSON.swift */; };
 		D682777A1A5DEA36007DEDA2 /* Earthquake.swift in Sources */ = {isa = PBXBuildFile; fileRef = D68277791A5DEA36007DEDA2 /* Earthquake.swift */; };
-		D68EFAC119D742CB0028A974 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D68EFABC19D742A60028A974 /* Alamofire.framework */; };
-		D68EFAC219D742CB0028A974 /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D68EFABC19D742A60028A974 /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		D6DDA34A1A62D74900075154 /* EarthquakeDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6DDA3491A62D74900075154 /* EarthquakeDataProvider.swift */; };
 /* End PBXBuildFile section */
 
@@ -29,69 +26,6 @@
 			remoteGlobalIDString = D60DDE3319D737880000970E;
 			remoteInfo = EarthQuake;
 		};
-		D68EFABB19D742A60028A974 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D68EFAB619D742A50028A974 /* Alamofire.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = F8111E3319A95C8B0040E7D1;
-			remoteInfo = Alamofire;
-		};
-		D68EFABD19D742A60028A974 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D68EFAB619D742A50028A974 /* Alamofire.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = F8111E3E19A95C8B0040E7D1;
-			remoteInfo = AlamofireTests;
-		};
-		D68EFABF19D742B70028A974 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D68EFAB619D742A50028A974 /* Alamofire.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = F8111E3219A95C8B0040E7D1;
-			remoteInfo = Alamofire;
-		};
-		D68EFAC319D742CB0028A974 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D68EFAB619D742A50028A974 /* Alamofire.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = F8111E3219A95C8B0040E7D1;
-			remoteInfo = Alamofire;
-		};
-		D69B59AF1C209435008D3C54 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D68EFAB619D742A50028A974 /* Alamofire.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 4DD67C0B1A5C55C900ED2280;
-			remoteInfo = "Alamofire OSX";
-		};
-		D69B59B11C209435008D3C54 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D68EFAB619D742A50028A974 /* Alamofire.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = F829C6B21A7A94F100A2CD59;
-			remoteInfo = "Alamofire OSX Tests";
-		};
-		D69B59B31C209435008D3C54 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D68EFAB619D742A50028A974 /* Alamofire.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 4CF626EF1BA7CB3E0011A099;
-			remoteInfo = "Alamofire tvOS";
-		};
-		D69B59B51C209435008D3C54 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D68EFAB619D742A50028A974 /* Alamofire.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 4CF626F81BA7CB3E0011A099;
-			remoteInfo = "Alamofire tvOS Tests";
-		};
-		D69B59B71C209435008D3C54 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D68EFAB619D742A50028A974 /* Alamofire.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = E4202FE01B667AA100C997FB;
-			remoteInfo = "Alamofire watchOS";
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -101,7 +35,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				D68EFAC219D742CB0028A974 /* Alamofire.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -120,9 +53,7 @@
 		D60DDE4E19D737880000970E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D60DDE4F19D737880000970E /* EarthQuakeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EarthQuakeTests.swift; sourceTree = "<group>"; };
 		D6389E801A5EF61900EFBA3A /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
-		D68277761A5DE3C7007DEDA2 /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
 		D68277791A5DEA36007DEDA2 /* Earthquake.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Earthquake.swift; sourceTree = "<group>"; };
-		D68EFAB619D742A50028A974 /* Alamofire.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Alamofire.xcodeproj; path = Alamofire/Alamofire.xcodeproj; sourceTree = "<group>"; };
 		D6DDA3491A62D74900075154 /* EarthquakeDataProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EarthquakeDataProvider.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -132,7 +63,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				D6389E811A5EF61900EFBA3A /* MapKit.framework in Frameworks */,
-				D68EFAC119D742CB0028A974 /* Alamofire.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -150,7 +80,6 @@
 			isa = PBXGroup;
 			children = (
 				D6389E801A5EF61900EFBA3A /* MapKit.framework */,
-				D68EFAB619D742A50028A974 /* Alamofire.xcodeproj */,
 				D60DDE3619D737880000970E /* EarthQuake */,
 				D60DDE4C19D737880000970E /* EarthQuakeTests */,
 				D60DDE3519D737880000970E /* Products */,
@@ -174,7 +103,6 @@
 				D60DDE4219D737880000970E /* LaunchScreen.xib */,
 				D60DDE3D19D737880000970E /* Main.storyboard */,
 				D60DDE4019D737880000970E /* Images.xcassets */,
-				D682777B1A5DEA52007DEDA2 /* Frameworks */,
 				D682777C1A5DEA68007DEDA2 /* Models */,
 				D6DDA3471A62D70000075154 /* Networking */,
 				D60DDE3719D737880000970E /* Supporting Files */,
@@ -207,34 +135,12 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		D682777B1A5DEA52007DEDA2 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				D68277761A5DE3C7007DEDA2 /* SwiftyJSON.swift */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 		D682777C1A5DEA68007DEDA2 /* Models */ = {
 			isa = PBXGroup;
 			children = (
 				D68277791A5DEA36007DEDA2 /* Earthquake.swift */,
 			);
 			name = Models;
-			sourceTree = "<group>";
-		};
-		D68EFAB719D742A50028A974 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				D68EFABC19D742A60028A974 /* Alamofire.framework */,
-				D68EFABE19D742A60028A974 /* Alamofire iOS Tests.xctest */,
-				D69B59B01C209435008D3C54 /* Alamofire.framework */,
-				D69B59B21C209435008D3C54 /* Alamofire OSX Tests.xctest */,
-				D69B59B41C209435008D3C54 /* Alamofire.framework */,
-				D69B59B61C209435008D3C54 /* Alamofire tvOS Tests.xctest */,
-				D69B59B81C209435008D3C54 /* Alamofire.framework */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 		D6DDA3471A62D70000075154 /* Networking */ = {
@@ -260,8 +166,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				D68EFAC019D742B70028A974 /* PBXTargetDependency */,
-				D68EFAC419D742CB0028A974 /* PBXTargetDependency */,
 			);
 			name = EarthQuake;
 			productName = EarthQuake;
@@ -299,9 +203,11 @@
 				TargetAttributes = {
 					D60DDE3319D737880000970E = {
 						CreatedOnToolsVersion = 6.0;
+						LastSwiftMigration = 0830;
 					};
 					D60DDE4819D737880000970E = {
 						CreatedOnToolsVersion = 6.0;
+						LastSwiftMigration = 0830;
 						TestTargetID = D60DDE3319D737880000970E;
 					};
 				};
@@ -317,12 +223,6 @@
 			mainGroup = D60DDE2B19D737880000970E;
 			productRefGroup = D60DDE3519D737880000970E /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-				{
-					ProductGroup = D68EFAB719D742A50028A974 /* Products */;
-					ProjectRef = D68EFAB619D742A50028A974 /* Alamofire.xcodeproj */;
-				},
-			);
 			projectRoot = "";
 			targets = (
 				D60DDE3319D737880000970E /* EarthQuake */,
@@ -330,58 +230,6 @@
 			);
 		};
 /* End PBXProject section */
-
-/* Begin PBXReferenceProxy section */
-		D68EFABC19D742A60028A974 /* Alamofire.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = Alamofire.framework;
-			remoteRef = D68EFABB19D742A60028A974 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		D68EFABE19D742A60028A974 /* Alamofire iOS Tests.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = "Alamofire iOS Tests.xctest";
-			remoteRef = D68EFABD19D742A60028A974 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		D69B59B01C209435008D3C54 /* Alamofire.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = Alamofire.framework;
-			remoteRef = D69B59AF1C209435008D3C54 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		D69B59B21C209435008D3C54 /* Alamofire OSX Tests.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = "Alamofire OSX Tests.xctest";
-			remoteRef = D69B59B11C209435008D3C54 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		D69B59B41C209435008D3C54 /* Alamofire.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = Alamofire.framework;
-			remoteRef = D69B59B31C209435008D3C54 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		D69B59B61C209435008D3C54 /* Alamofire tvOS Tests.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = "Alamofire tvOS Tests.xctest";
-			remoteRef = D69B59B51C209435008D3C54 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		D69B59B81C209435008D3C54 /* Alamofire.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = Alamofire.framework;
-			remoteRef = D69B59B71C209435008D3C54 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		D60DDE3219D737880000970E /* Resources */ = {
@@ -408,7 +256,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D68277771A5DE3C7007DEDA2 /* SwiftyJSON.swift in Sources */,
 				D60DDE3C19D737880000970E /* ViewController.swift in Sources */,
 				D6DDA34A1A62D74900075154 /* EarthquakeDataProvider.swift in Sources */,
 				D682777A1A5DEA36007DEDA2 /* Earthquake.swift in Sources */,
@@ -431,16 +278,6 @@
 			isa = PBXTargetDependency;
 			target = D60DDE3319D737880000970E /* EarthQuake */;
 			targetProxy = D60DDE4A19D737880000970E /* PBXContainerItemProxy */;
-		};
-		D68EFAC019D742B70028A974 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = Alamofire;
-			targetProxy = D68EFABF19D742B70028A974 /* PBXContainerItemProxy */;
-		};
-		D68EFAC419D742CB0028A974 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = Alamofire;
-			targetProxy = D68EFAC319D742CB0028A974 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -550,6 +387,7 @@
 				INFOPLIST_FILE = EarthQuake/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -560,6 +398,7 @@
 				INFOPLIST_FILE = EarthQuake/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -578,6 +417,7 @@
 				INFOPLIST_FILE = EarthQuakeTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/EarthQuake.app/EarthQuake";
 			};
 			name = Debug;
@@ -593,6 +433,7 @@
 				INFOPLIST_FILE = EarthQuakeTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/EarthQuake.app/EarthQuake";
 			};
 			name = Release;
