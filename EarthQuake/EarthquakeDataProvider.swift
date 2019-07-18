@@ -2,7 +2,7 @@ import Foundation
 
 class EarthquakeDataProvider : NSObject {
 
-    func NEW_getEarthquakeData(_ success: ((Array<Earthquake>?) -> Void)!, fail: ((NSError?) -> Void)!) -> Void {
+    func getEarthquakeData(_ success: ((Array<Earthquake>?) -> Void)!, fail: ((NSError?) -> Void)!) -> Void {
         let endpoint: String = "http://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_day.geojson"
         guard let url = URL(string: endpoint) else {
             fail(NSError())
