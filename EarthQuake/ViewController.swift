@@ -49,6 +49,6 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
     }
     
     fileprivate func _handleNetworkError(_ error: NSError!) {
-        print(error)
+        print(error ?? "")
     }
 }

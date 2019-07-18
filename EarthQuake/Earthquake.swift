@@ -8,7 +8,6 @@ class Earthquake {
     fileprivate var timeInSeconds: Double! = nil
     var mag: String! = nil
     var place: String! = nil
-
     
     func formattedDate() -> String! {
         let formatter = DateFormatter()
@@ -25,8 +24,6 @@ class Earthquake {
     }
 
     static func fromDict(feature: [String: AnyObject]) -> Earthquake? {
-
-
         guard let props = feature["properties"] as? [String: AnyObject] else {
             return nil
         }
@@ -43,11 +40,10 @@ class Earthquake {
             return nil
         }
 
-
         let quake = Earthquake()
         quake.detail = props["detail"] as? String ?? ""
-        quake.longitude = coordinates[0] as! Double
-        quake.latitude = coordinates[1] as! Double
+        quake.longitude = coordinates[0] as? Double
+        quake.latitude = coordinates[1] as? Double
         quake.mag = String(mag)
         quake.place = props["place"] as? String ?? ""
         quake.timeInSeconds = props["time"] as! Double / 1000

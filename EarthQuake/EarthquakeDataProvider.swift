@@ -2,10 +2,6 @@ import Foundation
 
 class EarthquakeDataProvider : NSObject {
 
-//    http://comcat.cr.usgs.gov/fdsnws/event/1/query?minmag=8.5&starttime=1900-01-01&endtime=2015-01-01&format=geojson
-//    Sample of a search url that returns JSON.
-
-
     func NEW_getEarthquakeData(_ success: ((Array<Earthquake>?) -> Void)!, fail: ((NSError?) -> Void)!) -> Void {
         let endpoint: String = "http://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_day.geojson"
         guard let url = URL(string: endpoint) else {
@@ -37,7 +33,7 @@ class EarthquakeDataProvider : NSObject {
                     return
                 }
 
-                success(features.flatMap { Earthquake.fromDict(feature: $0 as? [String : AnyObject] ?? [:]) })
+                success(features.compactMap { Earthquake.fromDict(feature: $0 as? [String : AnyObject] ?? [:]) })
             } catch  {
                 fail(NSError(domain: "INVALID_JSON", code: 0, userInfo: nil))
                 return
@@ -47,5 +43,3 @@ class EarthquakeDataProvider : NSObject {
         task.resume()
     }
 }
-
-
