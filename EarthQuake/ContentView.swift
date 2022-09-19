@@ -1,8 +1,8 @@
 import SwiftUI
 
 struct ContentView: View {
-
     @State var earthquakes: [Earthquake] = []
+    @State var loadingQuakes = false
 
     var body: some View {
         VStack {
@@ -11,9 +11,15 @@ struct ContentView: View {
                     await getQuakes()
                 }
             }
-            List {
-                ForEach(earthquakes) { quake in
-                    Text(quake.title)
+            Spacer()
+            if loadingQuakes {
+                ProgressView()
+                    .padding()
+            } else {
+                List {
+                    ForEach(earthquakes) { quake in
+                        Text(quake.title)
+                    }
                 }
             }
         }
@@ -22,10 +28,12 @@ struct ContentView: View {
 
     func getQuakes() async {
         do {
-            let result = try await QuakeClient.live.fetchQuakes()
-            earthquakes = result
+            loadingQuakes = true
+            earthquakes = try await QuakeClient.live.fetchQuakes()
+            loadingQuakes = false
         } catch {
             print(error)
+            loadingQuakes = false
         }
     }
 }
