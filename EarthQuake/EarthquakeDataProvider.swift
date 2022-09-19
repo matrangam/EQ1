@@ -2,7 +2,7 @@ import Foundation
 
 class EarthquakeDataProvider : NSObject {
 
-    func getEarthquakeData(_ success: ((Array<Earthquake>?) -> Void)!, fail: ((NSError?) -> Void)!) -> Void {
+    func getEarthquakeData(_ success: ((Array<LegacyEarthquake>?) -> Void)!, fail: ((NSError?) -> Void)!) -> Void {
         let endpoint: String = "http://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_day.geojson"
         guard let url = URL(string: endpoint) else {
             fail(NSError())
@@ -33,7 +33,7 @@ class EarthquakeDataProvider : NSObject {
                     return
                 }
 
-                success(features.compactMap { Earthquake.fromDict(feature: $0 as? [String : AnyObject] ?? [:]) })
+                success(features.compactMap { LegacyEarthquake.fromDict(feature: $0 as? [String : AnyObject] ?? [:]) })
             } catch  {
                 fail(NSError(domain: "INVALID_JSON", code: 0, userInfo: nil))
                 return

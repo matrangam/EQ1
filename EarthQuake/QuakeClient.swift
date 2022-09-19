@@ -1,7 +1,7 @@
 import Foundation
 
 struct QuakeClient {
-    var fetchQuakes: () async throws -> QuakeResponse
+    var fetchQuakes: () async throws -> [Earthquake]
 }
 
 extension QuakeClient {
@@ -14,6 +14,17 @@ extension QuakeClient {
         let response = try JSONDecoder().decode(QuakeResponse.self, from: data)
 
         
-        return response
+        return response.features.map { quake in
+            Earthquake(
+                id: quake.id,
+                mag: quake.properties.mag,
+                place: quake.properties.place,
+                updated: quake.properties.updated,
+                title: quake.properties.title,
+                type: quake.properties.type,
+                time: quake.properties.time,
+                coordinates: quake.geometry.coordinates
+            )
+        }
     }
 }

@@ -16,6 +16,7 @@ struct QuakeResponseMetadata: Codable {
 struct QuakeResponseFeature: Codable {
     let properties: QuakeResponseFeatureProperties
     let geometry: QuakeResponseFeatureGeometry
+    let id: String
 }
 
 struct QuakeResponseFeatureProperties: Codable {

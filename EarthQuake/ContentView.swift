@@ -1,22 +1,19 @@
-//
-//  ContentView.swift
-//  EQ2
-//
-//  Created by Michael Matranga on 9/19/22.
-//
-
 import SwiftUI
 
 struct ContentView: View {
+
+    @State var earthquakes: [Earthquake] = []
+
     var body: some View {
         VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
             Button("Get Quakes") {
                 Task {
                     await getQuakes()
+                }
+            }
+            List {
+                ForEach(earthquakes) { quake in
+                    Text(quake.title)
                 }
             }
         }
@@ -26,11 +23,10 @@ struct ContentView: View {
     func getQuakes() async {
         do {
             let result = try await QuakeClient.live.fetchQuakes()
-            print(result)
+            earthquakes = result
         } catch {
             print(error)
         }
-
     }
 }
 

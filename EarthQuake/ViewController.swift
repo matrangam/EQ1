@@ -33,7 +33,7 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
 //        AppDelegate().earthquakeDataProvider().getEarthquakeData(buildAnnotations, fail: handleNetworkError)
     }
     
-    fileprivate func buildAnnotations(_ earthQuakes: Array<Earthquake>!) {
+    fileprivate func buildAnnotations(_ earthQuakes: Array<LegacyEarthquake>!) {
             var quakeAnnotations = Array<MKPointAnnotation>()
             for quake in earthQuakes {
                 let annotation = MKPointAnnotation()

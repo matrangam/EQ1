@@ -1,10 +1,3 @@
-//
-//  EQ2App.swift
-//  EQ2
-//
-//  Created by Michael Matranga on 9/19/22.
-//
-
 import SwiftUI
 
 @main
