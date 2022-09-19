@@ -29,8 +29,8 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
         locationManager.stopUpdatingLocation()
     }
     
-    @IBAction fileprivate func earthquakeButtonPressed(_ sender: AnyObject) {
-        AppDelegate().earthquakeDataProvider().getEarthquakeData(buildAnnotations, fail: handleNetworkError)
+    @IBAction fileprivate func earthquakeButtonPressed(_ sender: AnyObject) async {
+//        AppDelegate().earthquakeDataProvider().getEarthquakeData(buildAnnotations, fail: handleNetworkError)
     }
     
     fileprivate func buildAnnotations(_ earthQuakes: Array<Earthquake>!) {
