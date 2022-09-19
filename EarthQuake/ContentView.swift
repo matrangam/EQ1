@@ -1,3 +1,4 @@
+import MapKit
 import SwiftUI
 
 enum LoadingState {
@@ -8,48 +9,45 @@ enum LoadingState {
 }
 
 struct ContentView: View {
-    @State var loadingState: LoadingState = .notStarted
+    @State private var loadingState: LoadingState = .notStarted
+    @State private var mapRegion = MKCoordinateRegion(
+        center: CLLocationCoordinate2D(latitude: 32.71, longitude: 117.16),
+        span: MKCoordinateSpan(latitudeDelta: 100.0, longitudeDelta: 100.0)
+    )
+    @State private var earthquakes: [Earthquake] = []
 
     var body: some View {
-        VStack {
-            switch loadingState {
-            case .notStarted:
-                VStack {
-                    Button("Get Quakes") {
-                        Task {
-                            await getQuakes()
-                        }
-                    }
-                    .padding()
-                    .background(.blue)
-                    .foregroundColor(.white)
-                    .clipShape(Capsule())
-                }
-            case .inProgress:
-                ProgressView()
-                    .padding()
-            case let .success(earthquakes):
-                List {
-                    ForEach(earthquakes) { quake in
-                        Text(quake.title)
+        ZStack {
+            Map(coordinateRegion: $mapRegion, annotationItems: earthquakes) { quake in
+                MapAnnotation(coordinate: quake.location()) {
+                    ZStack {
+                        Circle()
+                            .stroke(.red, lineWidth: 3)
+                            .frame(width: 44, height: 44)
+                            .onTapGesture {
+                                print("Tapped on \(quake)")
+                            }
+                        Text("\(quake.mag)")
                     }
                 }
-                .refreshable {
-                    Task {
-                        await getQuakes()
-                    }
+            }
+            .ignoresSafeArea()
+            VStack {
+                Button("Get Quakes") {
+                    Task { await getQuakes() }
                 }
-            case let .failed(error):
-                Text("Something went wrong: \(error.localizedDescription)")
+                .padding()
+                .background(.blue)
+                .foregroundColor(.white)
+                .clipShape(Capsule())
             }
         }
-        .padding()
     }
 
-    func getQuakes() async {
+    @MainActor func getQuakes() async {
         do {
             loadingState = .inProgress
-            let earthquakes = try await QuakeClient.failing.fetchQuakes()
+            earthquakes = try await QuakeClient.live.fetchSignificantQuakes()
             loadingState = .success(earthquakes)
         } catch {
             print(error)

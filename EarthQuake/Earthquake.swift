@@ -20,8 +20,8 @@ struct Earthquake: Identifiable {
     }
 
     func location() -> CLLocationCoordinate2D {
-        let lat = self.coordinates[0] as CLLocationDegrees
-        let lon = self.coordinates[1] as CLLocationDegrees
+        let lat = self.coordinates[1] as CLLocationDegrees
+        let lon = self.coordinates[0] as CLLocationDegrees
         return CLLocationCoordinate2DMake(lat, lon)
     }
 }

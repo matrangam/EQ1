@@ -5,7 +5,7 @@ enum QuakeClientError: Error {
 }
 
 struct QuakeClient {
-    var fetchQuakes: () async throws -> [Earthquake]
+    var fetchSignificantQuakes: () async throws -> [Earthquake]
 }
 
 extension QuakeClient {
@@ -18,8 +18,11 @@ extension QuakeClient {
         let response = try JSONDecoder().decode(QuakeResponse.self, from: data)
 
         
-        return response.features.map { quake in
-            Earthquake(
+        return response.features.compactMap { quake in
+            if quake.properties.mag < 5 {
+                return nil
+            }
+            return Earthquake(
                 id: quake.id,
                 mag: quake.properties.mag,
                 place: quake.properties.place,
