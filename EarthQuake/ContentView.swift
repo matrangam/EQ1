@@ -1,26 +1,46 @@
 import SwiftUI
 
+enum LoadingState {
+    case notStarted
+    case inProgress
+    case success([Earthquake])
+    case failed(Error)
+}
+
 struct ContentView: View {
-    @State var earthquakes: [Earthquake] = []
-    @State var loadingQuakes = false
+    @State var loadingState: LoadingState = .notStarted
 
     var body: some View {
         VStack {
-            Button("Get Quakes") {
-                Task {
-                    await getQuakes()
+            switch loadingState {
+            case .notStarted:
+                VStack {
+                    Button("Get Quakes") {
+                        Task {
+                            await getQuakes()
+                        }
+                    }
+                    .padding()
+                    .background(.blue)
+                    .foregroundColor(.white)
+                    .clipShape(Capsule())
                 }
-            }
-            Spacer()
-            if loadingQuakes {
+            case .inProgress:
                 ProgressView()
                     .padding()
-            } else {
+            case let .success(earthquakes):
                 List {
                     ForEach(earthquakes) { quake in
                         Text(quake.title)
                     }
                 }
+                .refreshable {
+                    Task {
+                        await getQuakes()
+                    }
+                }
+            case let .failed(error):
+                Text("Something went wrong: \(error.localizedDescription)")
             }
         }
         .padding()
@@ -28,12 +48,12 @@ struct ContentView: View {
 
     func getQuakes() async {
         do {
-            loadingQuakes = true
-            earthquakes = try await QuakeClient.live.fetchQuakes()
-            loadingQuakes = false
+            loadingState = .inProgress
+            let earthquakes = try await QuakeClient.failing.fetchQuakes()
+            loadingState = .success(earthquakes)
         } catch {
             print(error)
-            loadingQuakes = false
+            loadingState = .failed(error)
         }
     }
 }

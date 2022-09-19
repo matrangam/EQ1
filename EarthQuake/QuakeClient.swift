@@ -1,5 +1,9 @@
 import Foundation
 
+enum QuakeClientError: Error {
+    case decodingError
+}
+
 struct QuakeClient {
     var fetchQuakes: () async throws -> [Earthquake]
 }
@@ -26,5 +30,9 @@ extension QuakeClient {
                 coordinates: quake.geometry.coordinates
             )
         }
+    }
+
+    static let failing = Self {
+        throw QuakeClientError.decodingError
     }
 }
