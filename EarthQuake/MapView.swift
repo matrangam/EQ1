@@ -19,7 +19,7 @@ struct MapView: View {
                             .onTapGesture {
                                 print("Tapped on \(quake)")
                             }
-                        Text("\(quake.mag)")
+                        Text("\(quake.formattedMag)")
                     }
                 }
             }

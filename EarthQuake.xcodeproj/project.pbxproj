@@ -17,6 +17,7 @@
 		D62EF2EC28D912BD00B1675F /* MapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D62EF2EB28D912BD00B1675F /* MapViewModel.swift */; };
 		D6E0207528DC9FA600FBECBB /* HomeTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6E0207428DC9FA600FBECBB /* HomeTabView.swift */; };
 		D6E0207828DCA14900FBECBB /* EarthquakeListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6E0207728DCA14900FBECBB /* EarthquakeListView.swift */; };
+		D6E0207A28DCA45B00FBECBB /* EarthquakeListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6E0207928DCA45B00FBECBB /* EarthquakeListViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -45,6 +46,7 @@
 		D62EF2EB28D912BD00B1675F /* MapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewModel.swift; sourceTree = "<group>"; };
 		D6E0207428DC9FA600FBECBB /* HomeTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTabView.swift; sourceTree = "<group>"; };
 		D6E0207728DCA14900FBECBB /* EarthquakeListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EarthquakeListView.swift; sourceTree = "<group>"; };
+		D6E0207928DCA45B00FBECBB /* EarthquakeListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EarthquakeListViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,6 +146,7 @@
 			isa = PBXGroup;
 			children = (
 				D6E0207728DCA14900FBECBB /* EarthquakeListView.swift */,
+				D6E0207928DCA45B00FBECBB /* EarthquakeListViewModel.swift */,
 			);
 			name = EarthquakeListView;
 			sourceTree = "<group>";
@@ -229,6 +232,7 @@
 				D6E0207528DC9FA600FBECBB /* HomeTabView.swift in Sources */,
 				D6E0207828DCA14900FBECBB /* EarthquakeListView.swift in Sources */,
 				D62EF2E728D8CBC800B1675F /* Earthquake.swift in Sources */,
+				D6E0207A28DCA45B00FBECBB /* EarthquakeListViewModel.swift in Sources */,
 				D62EF2EC28D912BD00B1675F /* MapViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

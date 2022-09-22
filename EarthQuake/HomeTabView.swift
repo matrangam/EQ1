@@ -7,10 +7,7 @@ struct HomeTabView: View {
                 .tabItem {
                     Label("Map", systemImage: "map")
                 }
-
-            VStack {
-                Text("This is the list")
-            }
+            EarthquakeListView()
                 .tabItem {
                     Label("List", systemImage: "list.star")
                 }

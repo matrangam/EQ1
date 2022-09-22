@@ -11,7 +11,7 @@ struct Earthquake: Identifiable {
     let time: TimeInterval
     let coordinates: [Double]
 
-    func formattedDate() -> String! {
+    func formattedDate() -> String {
         let formatter = DateFormatter()
         formatter.timeZone = TimeZone(identifier: "UTC")
         formatter.dateFormat = "yyyy-MM-dd 'at' HH:mm 'UTC'"
@@ -23,6 +23,10 @@ struct Earthquake: Identifiable {
         let lat = self.coordinates[1] as CLLocationDegrees
         let lon = self.coordinates[0] as CLLocationDegrees
         return CLLocationCoordinate2DMake(lat, lon)
+    }
+
+    var formattedMag: String {
+        return String(format: "%.1f", mag)
     }
 }
 
