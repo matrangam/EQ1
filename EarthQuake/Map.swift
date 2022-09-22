@@ -1,7 +1,7 @@
 import MapKit
 import SwiftUI
 
-struct ContentView: View {
+struct MapView: View {
     @State private var mapRegion = MKCoordinateRegion(
         center: CLLocationCoordinate2D(latitude: 32.71, longitude: 117.16),
         span: MKCoordinateSpan(latitudeDelta: 100.0, longitudeDelta: 100.0)
@@ -35,6 +35,6 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        MapView()
     }
 }

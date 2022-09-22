@@ -4,7 +4,7 @@ import SwiftUI
 struct EQ2App: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            MapView()
         }
     }
 }
