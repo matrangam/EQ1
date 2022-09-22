@@ -15,7 +15,6 @@
 		D62EF2E528D8BE3100B1675F /* Map.swift in Sources */ = {isa = PBXBuildFile; fileRef = D62EF2E428D8BE3100B1675F /* Map.swift */; };
 		D62EF2E728D8CBC800B1675F /* Earthquake.swift in Sources */ = {isa = PBXBuildFile; fileRef = D62EF2E628D8CBC800B1675F /* Earthquake.swift */; };
 		D62EF2EC28D912BD00B1675F /* MapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D62EF2EB28D912BD00B1675F /* MapViewModel.swift */; };
-		D6389E811A5EF61900EFBA3A /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6389E801A5EF61900EFBA3A /* MapKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -42,7 +41,6 @@
 		D62EF2E428D8BE3100B1675F /* Map.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Map.swift; sourceTree = "<group>"; };
 		D62EF2E628D8CBC800B1675F /* Earthquake.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Earthquake.swift; sourceTree = "<group>"; };
 		D62EF2EB28D912BD00B1675F /* MapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewModel.swift; sourceTree = "<group>"; };
-		D6389E801A5EF61900EFBA3A /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,7 +48,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D6389E811A5EF61900EFBA3A /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -60,7 +57,6 @@
 		D60DDE2B19D737880000970E = {
 			isa = PBXGroup;
 			children = (
-				D6389E801A5EF61900EFBA3A /* MapKit.framework */,
 				D60DDE3619D737880000970E /* EarthQuake */,
 				D60DDE3519D737880000970E /* Products */,
 			);
@@ -77,10 +73,9 @@
 		D60DDE3619D737880000970E /* EarthQuake */ = {
 			isa = PBXGroup;
 			children = (
+				D6E0207228DC954800FBECBB /* Resources */,
 				D62EF2EA28D912AC00B1675F /* Map */,
 				D62EF2E228D8BE1D00B1675F /* App.swift */,
-				D60DDE4019D737880000970E /* Images.xcassets */,
-				D60DDE4219D737880000970E /* LaunchScreen.xib */,
 				D682777C1A5DEA68007DEDA2 /* Models */,
 				D6DDA3471A62D70000075154 /* Networking */,
 				D60DDE3719D737880000970E /* Supporting Files */,
@@ -122,6 +117,15 @@
 			name = Networking;
 			sourceTree = "<group>";
 		};
+		D6E0207228DC954800FBECBB /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				D60DDE4019D737880000970E /* Images.xcassets */,
+				D60DDE4219D737880000970E /* LaunchScreen.xib */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -151,7 +155,7 @@
 			attributes = {
 				LastSwiftMigration = 0720;
 				LastSwiftUpdateCheck = 0720;
-				LastUpgradeCheck = 1020;
+				LastUpgradeCheck = 1400;
 				ORGANIZATIONNAME = "Michael Matranga";
 				TargetAttributes = {
 					D60DDE3319D737880000970E = {
@@ -242,6 +246,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -266,7 +271,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -299,6 +304,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -316,7 +322,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
