@@ -9,22 +9,20 @@ struct ContentView: View {
     @ObservedObject var viewModel = MapViewModel()
 
     var body: some View {
-        ZStack {
-            Map(coordinateRegion: $mapRegion, annotationItems: viewModel.earthquakes) { quake in
-                MapAnnotation(coordinate: quake.location()) {
-                    ZStack {
-                        Circle()
-                            .stroke(.red, lineWidth: 3)
-                            .frame(width: 44, height: 44)
-                            .onTapGesture {
-                                print("Tapped on \(quake)")
-                            }
-                        Text("\(quake.mag)")
-                    }
+        Map(coordinateRegion: $mapRegion, annotationItems: viewModel.earthquakes) { quake in
+            MapAnnotation(coordinate: quake.location()) {
+                ZStack {
+                    Circle()
+                        .stroke(.red, lineWidth: 3)
+                        .frame(width: 44, height: 44)
+                        .onTapGesture {
+                            print("Tapped on \(quake)")
+                        }
+                    Text("\(quake.mag)")
                 }
             }
-            .ignoresSafeArea()
         }
+        .ignoresSafeArea()
         .onAppear(perform: {
             Task { await getQuakes() }
         })
