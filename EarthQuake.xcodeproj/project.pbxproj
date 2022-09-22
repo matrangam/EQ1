@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		D60DDE4119D737880000970E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D60DDE4019D737880000970E /* Images.xcassets */; };
-		D60DDE4419D737880000970E /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = D60DDE4219D737880000970E /* LaunchScreen.xib */; };
 		D62EF2A328D8B28400B1675F /* QuakeClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = D62EF2A228D8B28400B1675F /* QuakeClient.swift */; };
 		D62EF2A528D8B47400B1675F /* QuakeResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D62EF2A428D8B47400B1675F /* QuakeResponse.swift */; };
 		D62EF2E328D8BE1D00B1675F /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = D62EF2E228D8BE1D00B1675F /* App.swift */; };
@@ -37,7 +36,6 @@
 		D60DDE3419D737880000970E /* EarthQuake.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EarthQuake.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D60DDE3819D737880000970E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D60DDE4019D737880000970E /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		D60DDE4319D737880000970E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		D62EF2A228D8B28400B1675F /* QuakeClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuakeClient.swift; sourceTree = "<group>"; };
 		D62EF2A428D8B47400B1675F /* QuakeResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuakeResponse.swift; sourceTree = "<group>"; };
 		D62EF2E228D8BE1D00B1675F /* App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
@@ -129,7 +127,6 @@
 			isa = PBXGroup;
 			children = (
 				D60DDE4019D737880000970E /* Images.xcassets */,
-				D60DDE4219D737880000970E /* LaunchScreen.xib */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -213,7 +210,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D60DDE4419D737880000970E /* LaunchScreen.xib in Resources */,
 				D60DDE4119D737880000970E /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -238,17 +234,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXVariantGroup section */
-		D60DDE4219D737880000970E /* LaunchScreen.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				D60DDE4319D737880000970E /* Base */,
-			);
-			name = LaunchScreen.xib;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		D60DDE5119D737880000970E /* Debug */ = {
