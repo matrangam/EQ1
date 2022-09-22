@@ -24,16 +24,10 @@ struct ContentView: View {
                 }
             }
             .ignoresSafeArea()
-            VStack {
-                Button("Get Quakes") {
-                    Task { await getQuakes() }
-                }
-                .padding()
-                .background(.blue)
-                .foregroundColor(.white)
-                .clipShape(Capsule())
-            }
         }
+        .onAppear(perform: {
+            Task { await getQuakes() }
+        })
     }
 
     @MainActor func getQuakes() async {
